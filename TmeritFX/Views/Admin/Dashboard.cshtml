@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content-header">
+    <div class="header-icon">
+            <i class="pe-7s-display2"></i>
+        </div>
+    <div class="header-title">
+            <h1>Dashboard</h1>
+    </div>
+</div>
+
+<!-- Dashboard box-->
+<div class="row">
+	<div class="col-md-12 mb-2">
+		<div class="card-group m-b-30">
+			<div class="card mr-1 bg-primary mb-3 text-white rounded-lg">
+				<div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <div><h2>50<span> User</span></h2></div>
+                        <i class="la la-wallet" style="font-size:60px;color:white"></i>
+                    </div>
+                    <div><h3>Total User</h3></div>
+				</div>
+			</div>
+							
+			<div class="card ml-1 bg-primary mb-3 text-white rounded-lg">
+				<div class="card-body">
+                     <div class="d-flex justify-content-between mb-2">
+                        <div><h2>10<span> Request</span></h2></div>
+                        <i class="la la-money" style="font-size:60px;color:white"></i>
+                     </div>
+                     <div><h3>Total Withdrawal Request</h3></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6 mb-2">
+		<div class="card-group m-b-30">
+			<div class="card mr-1 bg-primary mb-3 text-white rounded-lg">
+				<div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <div><h2>5<span> User</span></h2></div>
+                        <i class="fa fa-money" style="font-size:40px;color:white"></i>
+                    </div>
+                    <div><h3>Registration Today</h3></div>
+				</div>
+			</div>
+							
+			<div class="card ml-1 bg-primary mb-3 text-white rounded-lg">
+				<div class="card-body">
+                     <div class="d-flex justify-content-between mb-2">
+                        <div><h2>0<span> USD</span></h2></div>
+                        <i class="fa fa-line-chart" style="font-size:40px;color:white"></i>
+                     </div>
+                     <div><h3>Total Profit</h3></div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="col-md-6 mb-2">
+		<div class="card-group m-b-30">
+			<div class="card bg-primary mb-3 text-white rounded-lg">
+				<div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <div><h2>5<span> USD</span></h2></div>
+                        <i class="fa fa-group" style="font-size:40px;color:white"></i>
+                    </div>
+                    <div><h3>Referal Bonus</h3></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--/ Dashboard box-->
+
+
+<!-- Calender and Chart -->
+<div class="row">
+	<div class="col-md-6 mb-2">
+		<div class="card-group m-b-30">
+			<div class="card mr-1 bg-info mb-3 text-white rounded-lg">
+				<div class="card-body">
+					<iframe src="exchange.blockchain.com/trade/BTC-USD" height="200" width="100%" title="description"></iframe>
+		         </div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 mb-2">
+		<div class="card-group m-b-30">
+			<div class="card mr-1 bg-info mb-3 text-white rounded-lg">
+				<div class="card-body">
+					<!-- Calendar -->
+					<div id="calendar"></div>
+					<!-- /Calendar -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- / Calender and Chart-->
+
+

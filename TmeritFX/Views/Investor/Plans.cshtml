@@ -1,0 +1,253 @@
+﻿@{
+	ViewData["Title"] = "Plans";
+	Layout = "~/Views/Shared/_InvestorsLayout.cshtml";
+
+	var bTC_Address = "bc1qzh99z8mksv50ufmd3j7kyyqlnrchpzsfkkgahz";
+	var bTC_Barcode = "/assets/img/BTC_Barcode.png";
+	var uSDT_Address = "TG8VnuwbfujcCKsh52QSKP5CpFjh2xJJQK";
+	var uSDT_Barcode = "/assets/img/USDTBarcode.png";
+}
+<div class="content-header">
+	<div class="header-title d-flex mb-3">
+		<i class="fa fa-server mr-3" style="font-size:45px; color:#5b69bc"></i> 
+		<h2>Plans</h2>
+    </div>
+</div>
+<div class="row">
+	<div class="col-md-12 col-lg-6 col-xl-6 d-flex">
+		<div class="card flex-fill plan-card">
+			<div class="card-body">
+				<div class="d-flex justify-content-center mb-3">
+					<span class="dash-widget-icon">$</span>
+					<h2 class="card-title mt-3">Basic Plan</h2>
+				</div>
+				<div class="statistics">
+					<div class="row">
+						<div class="col-md-6 col-6 text-center">
+							<div class="stats-box mb-4 plan-box">
+								<p class="pb-2">Minimum Deposit</p>
+								<h3>$100</h3>
+							</div>
+						</div>
+						<div class="col-md-6 col-6 text-center">
+							<div class="stats-box mb-4 plan-box">
+								<p class="pb-2">Max Depost</p>
+								<h3>$999</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pb-2 px-3">
+					<h4><i class="fa fa-dot-circle-o  mr-2" style="color:purple"></i>Daily Return <span class="float-right">8%</span></h4>
+					<h4><i class="fa fa-dot-circle-o  mr-2" style="color:purple"></i>Duration<span class="float-right">12Days</span></h3>
+					<h4><i class="fa fa-dot-circle-o mr-2" style="color:purple"></i>Total Return <span class="float-right">96% + Capital</span></h4>
+					<h4><i class="fa fa-dot-circle-o mr-2" style="color:purple"></i>Withdrawal<span class="float-right">Instant</span></h4>
+				</div>
+				<div class="text-center"><button type="button" class="btn btn-plan py-3" data-toggle="modal" data-target="#add_plan"><b>Purchase Now</b></button></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-12 col-lg-6 col-xl-6 d-flex">
+		<div class="card flex-fill plan-card">
+			<div class="card-body">
+				<div class="d-flex justify-content-center mb-3">
+					<span class="dash-widget-icon">$</span>
+					<h2 class="card-title mt-3">Corporate Plan</h2>
+				</div>
+				<div class="statistics">
+					<div class="row">
+						<div class="col-md-6 col-6 text-center">
+							<div class="stats-box mb-4 plan-box">
+								<p class="pb-2">Minimum Deposit</p>
+								<h3>$1,000</h3>
+							</div>
+						</div>
+						<div class="col-md-6 col-6 text-center">
+							<div class="stats-box mb-4 plan-box">
+								<p class="pb-2">Max Depost</p>
+								<h3>$9,999</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pb-2 px-3">
+					<h4><i class="fa fa-dot-circle-o  mr-2" style="color:purple"></i>Daily Return <span class="float-right">10%</span></h4>
+					<h4><i class="fa fa-dot-circle-o  mr-2" style="color:purple"></i>Duration<span class="float-right">10Days</span></h3>
+					<h4><i class="fa fa-dot-circle-o mr-2" style="color:purple"></i>Total Return <span class="float-right">100% + Capital</span></h4>
+					<h4><i class="fa fa-dot-circle-o mr-2" style="color:purple"></i>Withdrawal<span class="float-right">Instant</span></h4>
+				</div>
+				<div class="text-center"><button type="button" class="btn btn-plan py-3" data-toggle="modal" data-target="#add_plan"><b>Purchase Now</b></button></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12 col-lg-6 col-xl-6 d-flex">
+		<div class="card flex-fill plan-card">
+			<div class="card-body">
+				<div class="d-flex justify-content-center mb-3">
+					<span class="dash-widget-icon">$</span>
+					<h2 class="card-title mt-3">Premium Plan</h2>
+				</div>
+				<div class="statistics">
+					<div class="row">
+						<div class="col-md-6 col-6 text-center">
+							<div class="stats-box mb-4 plan-box">
+								<p class="pb-2">Minimum Deposit</p>
+								<h3>$10,000</h3>
+							</div>
+						</div>
+						<div class="col-md-6 col-6 text-center">
+							<div class="stats-box mb-4 plan-box">
+								<p class="pb-2">Max Depost</p>
+								<h3>$19,999</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pb-2 px-3">
+					<h4><i class="fa fa-dot-circle-o  mr-2" style="color:purple"></i>Daily Return <span class="float-right">15%</span></h4>
+					<h4><i class="fa fa-dot-circle-o  mr-2" style="color:purple"></i>Duration<span class="float-right">8Days</span></h3>
+					<h4><i class="fa fa-dot-circle-o mr-2" style="color:purple"></i>Total Return <span class="float-right">120% + Capital</span></h4>
+					<h4><i class="fa fa-dot-circle-o mr-2" style="color:purple"></i>Withdrawal<span class="float-right">Instant</span></h4>
+				</div>
+				<div class="text-center"><button type="button" class="btn btn-plan py-3" data-toggle="modal" data-target="#add_plan"><b>Purchase Now</b></button></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12 col-lg-6 col-xl-6 d-flex">
+		<div class="card flex-fill plan-card">
+			<div class="card-body">
+				<div class="d-flex justify-content-center mb-3">
+					<span class="dash-widget-icon">$</span>
+					<h2 class="card-title mt-3">Executive Plan</h2>
+				</div>
+				<div class="statistics">
+					<div class="row">
+						<div class="col-md-6 col-6 text-center">
+							<div class="stats-box mb-4 plan-box">
+								<p class="pb-2">Minimum Deposit</p>
+								<h3>$20,000</h3>
+							</div>
+						</div>
+						<div class="col-md-6 col-6 text-center">
+							<div class="stats-box mb-4 plan-box">
+								<p class="pb-2">Max Depost</p>
+								<h3>Unlimited</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pb-2 px-3">
+					<h4><i class="fa fa-dot-circle-o  mr-2" style="color:purple"></i>Daily Return <span class="float-right">25%</span></h4>
+					<h4><i class="fa fa-dot-circle-o  mr-2" style="color:purple"></i>Duration<span class="float-right">6Days</span></h3>
+					<h4><i class="fa fa-dot-circle-o mr-2" style="color:purple"></i>Total Return <span class="float-right">150% + Capital</span></h4>
+					<h4><i class="fa fa-dot-circle-o mr-2" style="color:purple"></i>Withdrawal<span class="float-right">Instant</span></h4>
+				</div>
+				<div class="text-center"><button type="button" class="btn btn-plan py-3" data-toggle="modal" data-target="#add_plan"><b>Purchase Now</button></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Purchase Plan Modal -->
+<div class="modal custom-modal fade" id="add_plan" role="dialog">
+	<div class="modal-dialog modal-md modal-dialog-centered">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+			<div class="modal-body py-1">
+				<h5 class="modal-title text-center mb-3">Purchase a plan</h5>
+					<div class="row">
+						<div class="col-md-12 mt-1">
+							<div class="card">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-md-6 mb-2">											
+											<div class="form-group my-0">
+												<label>Amount in USDT($100 min)<span class="text-danger"><b>*</b></span></label>
+												<input type="number" id="amount" autofocus onkeyup="ChoosePlan()"  class="form-control" placeholder="Enter investment amount" required>
+                                                <p class="text-danger" id="amountValidation" style="display: none;">Enter a valid amount</p>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group my-0">
+												<label class="pl-2">Plan</label>
+												<input type="text" id="plan_name" autofocus class="form-control" disabled>
+											</div>
+										</div>
+									</div>
+									<h2 class="card-title text-center">Choose Payment Option</h2>
+									<ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified">
+										<li class="nav-item active"><a class="nav-link active" href="#solid-rounded-justified-tab1" data-toggle="tab">BTC</a></li>
+										<li class="nav-item"><a class="nav-link" href="#solid-rounded-justified-tab2" data-toggle="tab">USDT</a></li>
+									</ul>
+									<div class="tab-content">
+										<!-- BTC Address-->
+										<div class="tab-pane show active text-center" id="solid-rounded-justified-tab1">
+											<img src="@bTC_Barcode" style="width: 200px;" class="pb-1"/>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text"><i class="fa fa-btc mr-2" style="font-size: 30px;"></i></span>
+												</div>
+												<input class="form-control" type="text" value="@bTC_Address" id="btc" disabled>
+												<div class="input-group-append">
+													<button class="btn btn-secondary" type="button" onclick="Copyddress('BTC')"><b><i class="fa fa-copy mr-2" style="font-size: 25px;"></i></b></button>
+												</div>
+											</div>
+										</div>
+										<!-- USDT Address-->
+										<div class="tab-pane text-center" id="solid-rounded-justified-tab2">
+											<img src="@uSDT_Barcode" style="width: 200px;" class="pb-1"/>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<span class="input-group-text">Trc20</span>
+												</div>
+												<input class="form-control" type="text" value="@uSDT_Address" id="usdt" disabled>
+												<div class="input-group-append">
+													<button class="btn btn-secondary" type="button" onclick="Copyddress('USDT')"><b><i class="fa fa-copy mr-2" style="font-size: 25px;"></i></b></button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group mt-3">
+										<label>Upload transaction hash<span class="text-danger"><b>*</b></span></label>
+										<input type="text" id="hash" class="form-control" required placeholder="Copy and paste transaction hash">
+									    <p class="text-danger" id="hashValidation" style="display: none;">Paste Transaction Hash Id</p>
+									</div>									
+									<div class="m-t-20 text-center mt-0">
+										<button class="btn btn-primary submit-btn" onclick="InvestmentPost('CREATE')">Submit</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Add Plan Modal -->
+				
+<script>
+	function ChoosePlan(){
+        var inputKontrola = document.getElementById('amount').value;
+        var planValue = document.getElementById('plan_name').value;
+
+		if(inputKontrola < 100){
+			$("#plan_name").val('');
+		}
+		if(inputKontrola >= 100){
+			$("#plan_name").val('BASIC');
+		}
+		if(inputKontrola >= 1000){
+			$("#plan_name").val('CORPORATE');
+		}
+		if(inputKontrola >= 10000){
+			$("#plan_name").val('PREMIUM');
+		}
+		if(inputKontrola >= 20000){
+			$("#plan_name").val('EXECUTIVE');
+		}
+	}
+
+</script>

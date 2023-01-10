@@ -1,0 +1,142 @@
+﻿@model TmeritFX.ViewModel.GeneralViewModel
+@{
+    ViewData["Title"] = "Referral";
+    Layout = "~/Views/Shared/_InvestorsLayout.cshtml";
+}
+
+<style>
+
+    body {
+        counter-reset: Serial; /* / Set the Serial counter to 0 /*/
+    }
+
+    tr td:first-child:before  {
+        counter-increment: Serial; /* / Increment the Serial counter /*/
+        content: counter(Serial); /*  / Display the counter /*/
+    }
+</style>
+<!-- Page Header -->
+<div class="page-header">
+						
+	<div class="row">
+		<div class="col">
+			<h3 class="page-title">Referral Program</h3>
+		</div>
+		<div class="col-auto float-right ml-auto">
+			<a class="btn btn-dashboard add-btn" asp-action="Withdrawal" asp-controller="Investor">Place Withdrawal</a>
+		</div>
+	</div>  
+</div>
+<!-- /Page Header -->
+
+<!-- Search Filter -->
+<div class="row">
+	<div class="col-md-12">
+		@if (@Model.Bonus.Count() > 0)
+		{
+			<div class="table-responsive">
+				<table class="table table-striped custom-table mb-0 datatable">
+					<thead>
+						<tr>
+							<th>S/N</th>
+							<th>Referee</th>
+							<th>Date</th>
+							<th>Bouns</th>										
+						</tr>
+					</thead>
+					@foreach(var payment in Model.Bonus)
+					{
+						<tbody>
+							<tr>
+								<td></td>
+								<td>@payment.Name</td>
+								<td>@payment.DateFunded</td>
+								<td>@payment.Bonus</td>
+						</tbody>
+					}
+				</table>
+			</div>
+		}
+		else
+		{
+			<div cclass="row p5 m-5">
+				<div class="col-md-12 text-center p-5 m5">
+					<h2>No Record Found</h2>
+				</div>
+			</div>
+		}
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12 mb-1 mt-5">
+		<div class="card-group m-b-30">
+			<div class="card mr-1 mb-3 box-style rounded-lg">
+				<div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <div><h3>@Model.Bonus.Count()<span> Users</span></h3></div>
+                        <i class="fa fa-shopping-bag text-muted" style="font-size:40px;"></i>
+                    </div>
+                    <div><h4>Total Referee</h4></div>
+				</div>
+			</div>
+
+			<div class="card mr-1 mb-3 box-style rounded-lg">
+				<div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <div><h3 id="myBonus"></h3></div>
+                        <i class="fa fa-shopping-bag text-muted" style="font-size:40px;"></i>
+                    </div>
+                    <div><h4>Total Bonus Earned</h4></div>
+				</div>
+			</div>
+							
+			<div class="card ml-1 mb-3 box-style rounded-lg">
+				<div class="card-body">
+                     <div class="d-flex justify-content-between mb-2">
+                        <div><h3>500<span> USD</span></h3></div>
+                        <i class="la la-shopping-bag text-muted" style="font-size:50px;"></i>
+                     </div>
+                     <div><h4>Minimum Bonus Withdrawal</h4></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Referral -->
+<div class="row">
+	<div class="col-md-12 rounded-lg">
+		<div class="card card-table flex-fill">
+			<div class="card-header">
+				<h3 class="card-title mb-0"><i class="fa fa-chain mr-2" style="font-size: 30px;"></i><b>Your Referral Link</b></h3>
+			</div>
+			<div class="card-body p-2">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="la la-chain mr-2" style="font-size: 30px;"></i></span>
+					</div>
+					<input class="form-control" type="text" value="@Model.Investors.RefLink" id="refID" disabled>
+					<div class="input-group-append">
+						<button class="btn btn-secondary" type="button" onclick="Copyddress('RefID')"><b>Copy</b></button>
+					</div>
+				</div>
+			</div>
+			<div class="card-footer">
+				<h4>Refer others and get 10% + of their first investment</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/ Referral -->
+
+<script>
+(function() {
+    debugger;
+    var bonus = @Model?.myBonus;
+    debugger;	
+	
+        var tBonus = bonus.toLocaleString('en-US');
+        document.getElementById("myBonus").innerHTML = tBonus + "<span> USDT</span>";				
+        
+})();
+</script>

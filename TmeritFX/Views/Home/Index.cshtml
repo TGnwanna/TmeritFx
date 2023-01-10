@@ -1,0 +1,873 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<section class="banner-section">
+    <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+        <div class="slide-item">
+            <div class="image-layer" style="background-image:url(assets/templates/bit_gold/assets/images/banner/pictures107.jpg)"></div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h5>get on the right way</h5>
+                    <br><br>
+                    <h1>VolksFx Investment Company <br><b class="base--color">Experienced. Specialized. Professional. </b></h1>
+                    <br>
+                    <div class="btn-box" style="padding-bottom: 57.5px;">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a asp-action="Plans" asp-controller="Investor" class="theme-btn style-one">Purchase a plan</a>
+                            <a asp-action="LogOut" asp-controller="Accounts" class="user-btn"><i class="far fa-user"></i><span>LogOut</span></a>
+                        }
+                        else
+                        {
+                            <a asp-action="Register" asp-controller="Accounts" class="theme-btn style-one">Sign Up</a>
+                            <a asp-action="Login" asp-controller="Accounts" class="user-btn"><i class="far fa-user"></i><span>Login</span></a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-item">
+            <div class="image-layer" style="background-image:url(assets/templates/bit_gold/assets/images/banner/pictures37.jpg)"></div>
+            <div class="auto-container">
+                <div class="content-box centred">
+                    <ul class="list-item clearfix">
+                        <li>.&nbsp;<a href="javascript:void(0)">Experienced</a>&nbsp;.&nbsp;</li>
+                        <li><a href="javascript:void(0)">Specialized</a>&nbsp;.&nbsp;</li>
+                        <li><a href="javascript:void(0)">Professional</a>&nbsp;.&nbsp;</li>
+                    </ul>
+                    <br><br><br>
+                    <h1>International Network To <br>Maximize Your Profit</h1>
+                    <br><br><br>
+                    <div class="btn-box" style="padding-bottom: 55px;">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a asp-action="Plans" asp-controller="Investor" class="theme-btn style-one">Purchase a plan</a>
+                        }
+                        else
+                        {
+                            <a asp-action="Register" asp-controller="Accounts" class="theme-btn style-one">Sign Up</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-item">
+            <div class="image-layer" style="background-image:url(assets/templates/bit_gold/assets/images/banner/pictures76.jpg)"></div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h5>get on the right way</h5>
+                    <br><br><br>
+                    <h1>Boosting Relations & <br>Loyalty, Anytime</h1>
+                    <br><br><br>
+                    <div class="btn-box" style="padding-bottom: 63px;">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a asp-action="Plans" asp-controller="Investor" class="banner-btn-two">Purchase a plan</a>
+                        }
+                        else
+                        {
+                            <a asp-action="Register" asp-controller="Accounts" class="theme-btn style-one">Sign Up</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner-section end -->
+
+<div class="stipe-value-slider">
+    <script src="coingecko-coin-price-marquee-widget.js"></script>
+    <coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="black" locale="en"></coingecko-coin-price-marquee-widget>
+</div>
+
+<section class="justify-content-center" style="margin-bottom: -55px;">
+    <div class="col-md-12 row justify-content-center text-center">
+        <div class="col-2 justify-content-center">
+            <img src="~/assets/images/logoIcon/binance.png" alt="" class="img-responsive" width="50px">
+        </div>
+        <div class="col-2 justify-content-center">
+            <img src="~/assets/images/logoIcon/blockchain.png" alt="" class="img-responsive" width="50px">
+        </div>
+        <div class="col-2 justify-content-center">
+            <img src="~/assets/images/logoIcon/coinbase.png" alt="" class="img-responsive" width="50px">
+        </div>
+        <div class="col-2 justify-content-center">
+            <img src="~/assets/images/logoIcon/huobi.png" alt="" class="img-responsive" width="50px">
+        </div>
+        <div class="col-2 justify-content-center">
+            <img src="~/assets/images/logoIcon/trustwallet.png" alt="" class="img-responsive" width="50px">
+        </div>
+        <div class="col-2 justify-content-center">
+            <img src="~/assets/images/logoIcon/etoro.png" alt="" class="img-responsive" width="50px">
+        </div>
+    </div>
+    <br><br>
+</section>
+
+
+<!-- feature-style-four -->
+<section class="feature-style-four about-page-2">
+    <div class="inner-content clearfix">
+        <div class="feature-block-four">
+            <div class="inner-box">
+                <div class="hidden-icon"><i class="flaticon-search"></i></div>
+                <div class="inner">
+                    <div class="icon-box"><i class="flaticon-search"></i></div>
+                    <h3>Best Financial Analysis</h3>
+                    <p>We are a business inclined profitable investment company we all the right tools and experts to help you grow your investment,<br><br><br><br></p>
+                </div>
+            </div>
+        </div>
+        <div class="feature-block-four">
+            <div class="inner-box">
+                <div class="hidden-icon"><i class="flaticon-claim"></i></div>
+                <div class="inner">
+                    <div class="icon-box"><i class="flaticon-presentation"></i></div>
+                    <h3>Our Investment Trading</h3>
+                    <p>With our easy to use online platform, you’ll have more control over your financial position. You and your financial adviser can manage your investments online, react more quickly to market developments and alter your asset choice whenever you want.</p>
+                </div>
+            </div>
+        </div>
+        <div class="feature-block-four">
+            <div class="inner-box">
+                <div class="hidden-icon"><i class="flaticon-presentation"></i></div>
+                <div class="inner">
+                    <div class="icon-box"><i class="flaticon-claim"></i></div>
+                    <h3>Free Taxation Planning</h3>
+                    <p>Accurate and Automated Taxation System with all professional hands on deck to ensure the best result for or investors<br><br><br><br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- feature-style-four -->
+
+<section>
+    <br>
+    <br>
+</section>
+
+
+<!-- feature-section -->
+<section class="feature-section bg-color-1" style="padding-top: 100px;margin-top: -70px;">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="~/assets/templates/bit_gold/assets/images/banner/pictures76.jpg" alt=""></figure>
+                        <div class="lower-content">
+                            <div class="inner">
+                                <h3>Financial Analysis</h3>
+                                <a asp-action="Plans" asp-controller="Investor"><span>Check Plan</span><i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="~/assets/templates/bit_gold/assets/images/banner/pictures83.jpg" alt=""></figure>
+                        <div class="lower-content">
+                            <div class="inner">
+                                <h3>Taxation Planning</h3>
+                                <a asp-action="Plans" asp-controller="Investor"><span>Check Plan</span><i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="~/assets/templates/bit_gold/assets/images/banner/pictures25.jpg" alt=""></figure>
+                        <div class="lower-content">
+                            <div class="inner">
+                                <h3>Investment Trading</h3>
+                                <a asp-action="Plans" asp-controller="Investor"><span>Check Plan</span><i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- feature-section end -->
+
+<section class="pb-120 justify-content-center text-center">
+    <br><br>
+    <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+            <div class="section-header">
+                <h2 class="section-title"><span class="font-weight-normal">We Are</span> <b class="base--color">Certified</b></h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <img src="~/assets/images/certificates/certificate1.png" alt="" width="350px"><p><br></p>
+            </div>
+            <div class="col-md-6">
+                <img src="~/assets/images/certificates/certificate2.png" alt="" width="350px">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- about-section -->
+<section class="about-section bg-color-1">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 video-column">
+                <div class="video-inner">
+                    <figure class="image-box"><img src="~/assets/templates/bit_gold/assets/images/banner/pictures107.jpg" alt=""></figure>
+                    <div class="video-btn">
+                        <a href="~/assets/videos/video.mp4" target="_blank" class="" data-caption="" style="background-image: url(assets/templates/bit_gold/assets/images/resource/btn-bg.png);"><i class="fas fa-play"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div id="content_block_one">
+                    <div class="content-box">
+                        <div class="sec-title left">
+                            <h5>About Us</h5>
+                            <h2>Experienced. Specialized. Professional.</h2>
+                        </div>
+                        <div class="text">
+                            <p>
+                                We are a business inclined profitable investment company we all the right tools and experts to help you grow your investment.
+
+                            </p>
+                        </div>
+                        <div class="inner-box">
+                            <div class="single-item">
+                                <div class="icon-box">
+                                    <span class="bg-box"></span>
+                                    <i class="flaticon-computer-1"></i>
+                                </div>
+                                <h4><a href="javascript:void(0)">Support On Raising Funds</a></h4>
+                                <p>We Run Promotions And Ranks Platforms that will support and grow more funds for our reputable Clients.</p>
+                            </div>
+                            <div class="single-item">
+                                <div class="icon-box">
+                                    <span class="bg-box"></span>
+                                    <i class="flaticon-browser-1"></i>
+                                </div>
+                                <h4><a href="javascript:void(0)">Outsourced Consulting Business</a></h4>
+                                <p>With our easy to use online platform, you’ll have more control over your financial position. You and your financial adviser can manage your investments online, react more quickly to market developments and alter your asset choice whenever you want.</p>
+                            </div>
+                            <a href="#" class="theme-btn style-one mr-10">Telegram Support</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about-section end -->
+
+
+<section class="pt-120 pb-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="section-header">
+                    <h2 class="section-title"><span class="font-weight-normal">VolksFx Investment</span> <b class="base--color">Plans</b></h2>
+                    <p>To make a solid investment, you have to know where you are investing. Find a plan which is best for you.</p>
+                </div>
+            </div>
+        </div><!-- row end -->
+        <div class="row mb-none-30 justify-content-center">
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
+                <div class="package-card text-center bg_img">
+                    <h4 class="package-card__title base--color mb-2">Beginners Plan<br></h4>
+
+                    <ul class="package-card__features mt-4" style="color:#fff">
+                        <li>Return 8%</li>
+
+                        <li>
+                            Interest Return
+                        </li>
+                        <li>
+                            Instant:payment
+                        </li>
+                        <li>For   12 Days  </li>
+                        <li>
+                            Total   96%  + <span class="badge badge-success">Capital</span>
+                        </li>
+                    </ul>
+                    <div class="package-card__range mt-5 base--color">
+                        $100  - $999<br>
+                    </div>
+                    <a asp-action="Plans" asp-controller="Investor" class="cmn-btn btn-md mt-4 investButton">Invest Now</a>
+                </div><!-- package-card end -->
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
+                <div class="package-card text-center bg_img">
+                    <h4 class="package-card__title base--color mb-2">Corporate Plan</h4>
+
+                    <ul class="package-card__features mt-4" style="color:#fff">
+                        <li>Return 10%</li>
+
+                        <li>Interest Return</li>
+                        <li>Instant:payment </li>
+                        <li>For   10 Days  </li>
+                        <li> Total   100% + <span class="badge badge-success">Capital</span> </li>
+                    </ul>
+                    <div class="package-card__range mt-5 base--color"> $1000  - $9999<br> </div>
+
+                    <a asp-action="Plans" asp-controller="Investor" class="cmn-btn btn-md mt-4 investButton">Invest Now</a>
+                </div><!-- package-card end -->
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
+                <div class="package-card text-center bg_img">
+                    <h4 class="package-card__title base--color mb-2">Premium Plan</h4>
+
+                    <ul class="package-card__features mt-4" style="color:#fff">
+                        <li>Return 15%</li>
+
+                        <li>
+                            Interest Return
+                        </li>
+                        <li>
+                            Instant:payment
+                        </li>
+                        <li>For   8 Days  </li>
+                        <li>
+                            Total   120%
+                            + <span class="badge badge-success">Capital</span>
+                        </li>
+
+                    </ul>
+                    <div class="package-card__range mt-5 base--color">
+                        $10000  - $19999<br>
+                    </div>
+                    <a asp-action="Plans" asp-controller="Investor" class="cmn-btn btn-md mt-4 investButton">Invest Now</a>
+                </div><!-- package-card end -->
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-30">
+                <div class="package-card text-center bg_img">
+                    <h4 class="package-card__title base--color mb-2">Executive Plan</h4>
+
+                    <ul class="package-card__features mt-4" style="color:#fff">
+                        <li>Return 25%</li>
+
+                        <li>
+                            Interest Return
+                        </li>
+                        <li>
+                            Instant:payment
+                        </li>
+                        <li>For   6 Days  </li>
+                        <li>
+                            Total   150%
+                            + <span class="badge badge-success">Capital</span>
+                        </li>
+
+                    </ul>
+                    <div class="package-card__range mt-5 base--color">$No Limit</div>
+                    <a asp-action="Plans" asp-controller="Investor" class="cmn-btn btn-md mt-4 investButton">Invest Now</a>
+                </div><!-- package-card end -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="col-md-12">
+    <h1 class="row mb-none-30 justify-content-center base--color ">We Are Offering 10% Direct Referral Comission</h1>
+</div>
+
+
+
+<!-- service-section -->
+<section class="service-section">
+    <div class="auto-container">
+        <div class="title-box">
+            <div class="row clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title right">
+                        <h5>What we provide</h5>
+                        <h2>Why Choose <b class="base--color">Tmerit Investment Company</b></h2>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service..</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="inner-content">
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <h4><a href="javascript:void(0)">Legal Company</a></h4>
+                            <div class="inner">
+                                <div class="icon-box"><i class="las la-copy"></i></div>
+                                <p>Our company conducts absolutely legal activities in the legal field. We are certified to operate investment business, we are legal and safe..</p>
+                                <a asp-action="Plans" asp-controller="Investor"><i class="fas fa-arrow-right"></i><span>Get Started</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <h4><a href="javascript:void(0)">High reliability</a></h4>
+                            <div class="inner">
+                                <div class="icon-box"><i class="las la-lock"></i></div>
+                                <p>We are trusted by a huge number of people. We are working hard constantly to improve the level of our security system and minimize possible risks..</p>
+                                <a asp-action="Plans" asp-controller="Investor"><span>Get Started</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <h4><a href="javascript:void(0)">Anonymity</a></h4>
+                            <div class="inner">
+                                <div class="icon-box"><i class="las la-user-lock"></i></div>
+                                <p>Anonymity and using cryptocurrency as a payment instrument. In the era of electronic money – this is one of the most convenient ways of cooperation..</p>
+                                <a asp-action="Plans" asp-controller="Investor"><i class="fas fa-arrow-right"></i><span>Get Started</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <h4><a href="javascript:void(0)">Quick Withdrawal</a></h4>
+                            <div class="inner">
+                                <div class="icon-box"><i class="las la-shipping-fast"></i></div>
+                                <p>Our all retreats are treated spontaneously once requested. There are high maximum limits. The minimum withdrawal amount is only $10 ..</p>
+                                <a asp-action="Plans" asp-controller="Investor"><i class="fas fa-arrow-right"></i><span>Get Started</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <h4><a href="javascript:void(0)">Referral Program</a></h4>
+                            <div class="inner">
+                                <div class="icon-box"><i class="las la-users"></i></div>
+                                <p>We are offering a certain level of referral income through our referral program. you can increase your income by simply refer a few people..</p>
+                                <a asp-action="Referrals" asp-controller="Investor"></i><span>Get Started</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <h4><a href="javascript:void(0)">24/7 Support</a></h4>
+                            <div class="inner">
+                                <div class="icon-box"><i class="las la-headset"></i></div>
+                                <p>We provide 24/7 customer support through e-mail and telegram. Our support representatives are periodically available to elucidate any difficulty..</p>
+                                <a href="javascript:void(0)"><i class="fas fa-arrow-right"></i><span>Get Started</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <h4><a href="javascript:void(0)">Dedicated Server</a></h4>
+                            <div class="inner">
+                                <div class="icon-box"><i class="las la-server"></i></div>
+                                <p>We are using a dedicated server for the website which allows us exclusive use of the resources of the entire server..</p>
+                                <a asp-action="Plans" asp-controller="Investor"><i class="fas fa-arrow-right"></i><span>Get Started</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <h4><a href="javascript:void(0)">SSL Secured</a></h4>
+                            <div class="inner">
+                                <div class="icon-box"><i class="lab la-expeditedssl"></i></div>
+                                <p>Comodo Essential-SSL Security encryption confirms that the presented content is genuine and legitimate..</p>
+                                <a asp-action="Plans" asp-controller="Investor"><i class="fas fa-arrow-right"></i><span>Get Started</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                    <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <h4><a href="javascript:void(0)">DDOS Protection</a></h4>
+                            <div class="inner">
+                                <div class="icon-box"><i class="las la-shield-alt"></i></div>
+                                <p>We are using one of the most experienced, professional, and trusted DDoS Protection and mitigation provider..</p>
+                                <a asp-action="Plans" asp-controller="Investor"><i class="fas fa-arrow-right"></i><span>Get Started</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- service-section end -->
+<!-- project-section -->
+<section class="project-section">
+    <div class="fluid-container">
+        <div class="project-carousel theme-carousel owl-theme owl-carousel owl-dots-none owl-nav-none">
+            <div class="project-block-one">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="~/assets/templates/bit_gold/assets/images/banner/pictures83.jpg" alt=""></figure>
+                    <div class="lower-content">
+                        <p>Corporate Management</p>
+                        <h2><a href="javascript:void(0)">Global Management</a></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="project-block-one">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="~/assets/templates/bit_gold/assets/images/banner/pictures99.jpg" alt=""></figure>
+                    <div class="lower-content">
+                        <p>Financial Initiatives</p>
+                        <h2><a href="javascript:void(0)">Planning & Investment Counselling</a></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="project-block-one">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="~/assets/templates/bit_gold/assets/images/banner/pictures15.jpg" alt=""></figure>
+                    <div class="lower-content">
+                        <p>Admin Management</p>
+                        <h2><a href="javascript:void(0)">Private  Assistant</a></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- project-section end -->
+<!-- annual-stats -->
+<section class="annual-stats">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div id="content_block_two">
+                    <div class="content-box">
+                        <div class="sec-title left">
+                            <h5>Annual Stats</h5>
+                            <h2>Graph Shows Net Value Profit Assembling</h2>
+                        </div>
+                        <div class="text">
+                            <p>So Far these are our Graph that displays Net Value And Profit Earned By VolksFx Investment Company - Experienced. Specialized. Professional.</p>
+                        </div>
+                        <div class="inner-box clearfix">
+                            <div class="single-progress-box">
+                                <div class="box">
+                                    <div class="piechart" data-fg-color="#204669" data-value=".75">
+                                        <span>.75</span>
+                                    </div>
+                                    <h5>Global Flexibility <br>Investment</h5>
+                                    <h3>Upto 75% Asests</h3>
+                                </div>
+                            </div>
+                            <div class="single-progress-box">
+                                <div class="box">
+                                    <div class="piechart" data-fg-color="#da2c46" data-value=".90">
+                                        <span>.90</span>
+                                    </div>
+                                    <h5>Security Financial <br>Solutions</h5>
+                                    <h3>Upto 90% Efficient</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div id="image_block_one">
+                    <div class="image-box">
+                        <div class="pattern-layer" style="background-image: url(assets/templates/bit_gold/assets/images/shape/shape-1.png);"></div>
+                        <figure class="image"><img src="~/assets/templates/bit_gold/assets/images/resource/state-1.jpg" alt=""></figure>
+                        <div class="award-box">
+                            <div class="box">
+                                <figure class="icon-box"><img src="~/assets/templates/bit_gold/assets/images/icons/icon-1.png" alt=""></figure>
+                                <span>Best Investment Platform Award 2019-2020</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- annual-stats end -->
+<!-- world-cyber -->
+<section class="world-cyber bg-color-1">
+    <div class="pattern-layer" style="background-image: url(assets/templates/bit_gold/assets/images/shape/shape-2.png);"></div>
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <h5>Globaly renowned & trusted</h5>
+            <h2>VolksFx Investment Company Working Everywhere</h2>
+        </div>
+        <div class="office-location">
+            <div class="location-area">
+                <div class="location-box">
+                    <div class="address-box">
+                        <figure class="icon-box"><img src="~/assets/templates/bit_gold/assets/images/icons/icon-2.png" alt=""></figure>
+                        <p>Serve you to reach best profits and goals.</p>
+                    </div>
+                </div>
+                <div class="location-box">
+                    <div class="address-box">
+                        <figure class="icon-box"><img src="~/assets/templates/bit_gold/assets/images/icons/icon-2.png" alt=""></figure>
+                        <p>Serve you to reach best profits and goals.</p>
+                    </div>
+                </div>
+                <div class="location-box">
+                    <div class="address-box">
+                        <figure class="icon-box"><img src="~/assets/templates/bit_gold/assets/images/icons/icon-2.png" alt=""></figure>
+                        <p>Serve you to reach best profits and goals.</p>
+                    </div>
+                </div>
+                <div class="location-box">
+                    <div class="address-box">
+                        <figure class="icon-box"><img src="~/assets/templates/bit_gold/assets/images/icons/icon-2.png" alt=""></figure>
+                        <p>Serve you to reach best profits and goals.</p>
+                    </div>
+                </div>
+                <div class="location-box">
+                    <div class="address-box">
+                        <figure class="icon-box"><img src="~/assets/templates/bit_gold/assets/images/icons/icon-2.png" alt=""></figure>
+                        <p>Serve you to reach best profits and goals.</p>
+                    </div>
+                </div>
+                <div class="location-box">
+                    <div class="address-box">
+                        <figure class="icon-box"><img src="~/assets/templates/bit_gold/assets/images/icons/icon-2.png" alt=""></figure>
+                        <p>Serve you to reach best profits and goals.</p>
+                    </div>
+                </div>
+                <div class="location-box">
+                    <div class="address-box">
+                        <figure class="icon-box"><img src="~/assets/templates/bit_gold/assets/images/icons/icon-2.png" alt=""></figure>
+                        <p>Serve you to reach best profits and goals.</p>
+                    </div>
+                </div>
+                <div class="location-box">
+                    <div class="address-box">
+                        <figure class="icon-box"><img src="~/assets/templates/bit_gold/assets/images/icons/icon-2.png" alt=""></figure>
+                        <p>Serve you to reach best profits and goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- world-cyber end -->
+
+<section class="pt-120 pb-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="section-header">
+                    <h2 class="section-title"><span class="font-weight-normal">Frequently Asked</span> <b class="base--color">Questions</b></h2>
+                    <p>We answer some of your Frequently Asked Questions regarding our platform. If you have a query that is not answered here, Please contact us.</p>
+                </div>
+            </div>
+        </div><!-- row end -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion cmn-accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="heading0">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse0" aria-expanded="false" aria-controls="collapse0">
+                                    <i class="las la-question-circle"></i>
+                                    <span>When can I deposit/withdraw from my Investment account?</span>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapse0" class="collapse" aria-labelledby="heading0" data-parent="#accordionExample" style="">
+                            <div class="card-body">
+                                Deposit and withdrawal are available at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. The available amount is shown in your dashboard on the main page of Investing platform.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="heading1">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                    <i class="las la-question-circle"></i>
+                                    <span>How do I check my account balance?</span>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionExample" style="">
+                            <div class="card-body">
+                                You can see this anytime on your accounts dashboard.  You can see this anytime on your accounts dashboard.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="heading2">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    <i class="las la-question-circle"></i>
+                                    <span>I forgot my password, what should I do?</span>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample" style="">
+                            <div class="card-body">
+                                Visit the password reset page, type in your email address, and click the `Reset` button.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="heading3">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    <i class="las la-question-circle"></i>
+                                    <span>How will I know that the withdrawal has been successful?</span>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample" style="">
+                            <div class="card-body">
+                                You will get an automatic notification once we send the funds and you can always check your transactions or account balance. Your chosen payment system dictates how long it will take for the funds to reach you.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="heading4">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                    <i class="las la-question-circle"></i>
+                                    <span>How much can I withdraw?</span>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample" style="">
+                            <div class="card-body">
+                                You can withdraw the full amount of your account balance minus the funds that are used currently for supporting opened positions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>                    <!-- testimonial-style-two -->
+<section class="testimonial-style-two">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <h5>testimonials</h5>
+            <h2><span class="font-weight-normal">What Our Clients Say</span> <b class="base--color">About Us</b></h2>
+        </div>
+        <div class="three-item-carousel owl-carousel owl-theme owl-nav-none owl-dot-style-one">
+            <div class="testimonial-content">
+                <div class="inner-box">
+                    <div class="text">
+                        <i class="fas fa-quote-right"></i>
+                        <p>This is due to their excellent service, competitive pricing, and customer support. It’s thoroughly refreshing to get such a personal touch..</p>
+                    </div>
+                    <div class="author-info">
+                        <figure class="image-box"><img src="~/assets/images/frontend/testimonial/60e5e462621671625678946.jpg" alt=""></figure>
+                        <h5>Minta Hadad</h5>
+                        <span class="designation">User From California</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-content">
+                <div class="inner-box">
+                    <div class="text">
+                        <i class="fas fa-quote-right"></i>
+                        <p>This is a serious paying investment program. and always pays instantly! Sent me payments without any problems. Many thanks for the support..</p>
+                    </div>
+                    <div class="author-info">
+                        <figure class="image-box"><img src="~/assets/images/frontend/testimonial/60e5e4a97cf6b1625679017.jpg" alt=""></figure>
+                        <h5>Kyle Demayo</h5>
+                        <span class="designation">User From Seattle</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-content">
+                <div class="inner-box">
+                    <div class="text">
+                        <i class="fas fa-quote-right"></i>
+                        <p>Wonderful service!! You can invest in their plans right now! Site paying me fine. I absolutely trust this company. Thanks for your support offer us a stable program! You are the best!.</p>
+                    </div>
+                    <div class="author-info">
+                        <figure class="image-box"><img src="~/assets/images/frontend/testimonial/60e5e51b760291625679131.jpg" alt=""></figure>
+                        <h5>Sherman Cibrian</h5>
+                        <span class="designation">User From Arizon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- testimonial-style-two end -->
+<section class="pb-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="section-header">
+                    <h2 class="section-title"><span class="font-weight-normal">We</span> <b class="base--color">Accept</b></h2>
+                    <p>Payment methods are selected to make your investment process easier with our platform.</p>
+                </div>
+            </div>
+        </div><!-- row end -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="payment-slider">
+                    <div class="single-slide">
+                        <div class="brand-item">
+                            <img src="~/assets/images/gateway/60ef7fc538f2b1626308549.png" alt="image">
+                        </div><!-- brand-item end -->
+                    </div>
+                    <div class="single-slide">
+                        <div class="brand-item">
+                            <img src="~/assets/images/gateway/60f1df491aa431626464073.png" alt="image">
+                        </div><!-- brand-item end -->
+                    </div>
+                </div><!-- payment-slider end -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@*<!-- Modal -->
+<div class="modal fade" id="depoModal" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content-bg">
+            <div class="modal-header">
+                <strong class="modal-title text-black" id="ModalLabel"> Sign in first</strong>
+                <a href="javascript:void(0)" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </a>
+            </div>
+            <form action="https://volksfx.org/user/plans" method="post" class="register">
+                <input type="hidden" name="_token" value="KowHRlKNSrtCD1bz4DUAumrBZvZX1SXmKEal6IMW">
+                <div class="modal-footer">
+                    <a href="user/login.html" type="button" class="btn btn-success custom-success w-100">Sign In</a>
+                    <a href="user/register.html" type="button" class="btn btn-success custom-success w-100">Creat Account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>*@

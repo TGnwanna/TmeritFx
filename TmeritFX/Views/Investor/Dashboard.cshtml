@@ -1,0 +1,171 @@
+﻿@model TmeritFX.ViewModel.GeneralViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_InvestorsLayout.cshtml";
+}
+
+<div class="content-header">
+    <div class="header-icon">
+            <i class="pe-7s-display2"></i>
+        </div>
+    <div class="header-title d-flex mb-3">
+		<i class="fa fa-desktop text-success mr-3" style="font-size:45px;"></i> 
+		<h2 >Dashboard</h2>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-md-12">
+        <a type="button" class="btn btn-dashboard" asp-action="Plans" asp-controller="Investor">Invest</a>
+        <a type="button" class="btn btn-dashboard" asp-action="History" asp-controller="Investor">History</a>
+        <a type="button" class="btn btn-dashboard" asp-action="Withdrawal" asp-controller="Investor">Withdraw</a>
+    </div>
+</div>
+<!-- Dashboard box-->
+<div class="row">
+	<div class="col-md-12 mb-2">
+		<div class="card-group m-b-30">
+			<div class="card mr-1 box-style mb-3 rounded-lg">
+				<div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <div><h4 id="TWithdrawableBal"></h4></div>						
+                        <i class="la la-wallet text-muted" style="font-size:40px;"></i>
+                    </div>
+                    <div><h3>Wallet Balance</h3></div>
+				</div>
+			</div>
+							
+			<div class="card ml-1 box-style mb-3 rounded-lg">
+				<div class="card-body">
+                     <div class="d-flex justify-content-between mb-2">
+                        <div><h4 id="TotalWithdrawal"></h4></div>
+                        <i class="la la-money text-muted" style="font-size:40px;"></i>
+                     </div>
+                     <div><h3>Total Withdrawal</h3></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6 mb-2">
+		<div class="card-group m-b-30">
+			<div class="card mr-1 box-style mb-3 rounded-lg">
+				<div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <div><h4 id="myInvestment"></h4></div>
+                        <i class="fa fa-money text-muted" style="font-size:40px;"></i>
+                    </div>
+                    <div><h3>Total Investment</h3></div>
+				</div>
+			</div>		
+			<div class="card ml-1 mb-3 box-style rounded-lg">
+				<div class="card-body">
+                     <div class="d-flex justify-content-between mb-2">
+                        <div><h4 id="TotalROI"></h4></div>
+                        <i class="fa fa-line-chart text-muted" style="font-size:35px;"></i>
+                     </div>
+                     <div><h3>Total Profit</h3></div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="col-md-6 mb-2">
+		<div class="card-group m-b-30">
+			<div class="card mb-3 box-style rounded-lg">
+				<div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <div><h4 id="myBonus"></h4></div>
+                        <i class="la la-group text-muted" style="font-size:40px;"></i>
+                    </div>
+                    <div><h3>Referal Bonus</h3></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--/ Dashboard box-->
+
+<!-- Referral -->
+<div class="row">
+	<div class="col-md-12 rounded-lg">
+		<div class="card card-table flex-fill">
+			<div class="card-header">
+				<h3 class="card-title mb-0"><i class="fa fa-chain mr-2" style="font-size: 30px;"></i><b>Your Referral Link</b></h3>
+			</div>
+			<div class="card-body p-2">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="la la-chain mr-2" style="font-size: 30px;"></i></span>
+					</div>
+					<input class="form-control" type="text" value="@Model.Investors.RefLink" id="refID" disabled>
+					<div class="input-group-append">
+						<button class="btn btn-secondary" type="button"  onclick="Copyddress('RefID')"><b>Click to Copy</b></button>
+					</div>
+				</div>
+			</div>
+			<div class="card-footer">
+				<h4>Refer others and get 10% + of their first investment</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/ Referral -->
+
+
+<!-- Calender and Chart -->
+@*<div class="row">
+	<div class="col-md-6 mb-2">
+		<div class="card-group m-b-30">
+			<div class="card mr-1 bg-info mb-3 text-white rounded-lg">
+				<div class="card-body">
+					<iframe src="exchange.blockchain.com/trade/BTC-USD" height="200" width="100%" title="description"></iframe>
+		         </div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 mb-2">
+		<div class="card-group m-b-30">
+			<div class="card mr-1 bg-info mb-3 text-white rounded-lg">
+				<div class="card-body">
+					<!-- Calendar -->
+					<div id="calendar"></div>
+					<!-- /Calendar -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>*@
+<!-- / Calender and Chart-->
+
+<script>
+(function() {
+    debugger;
+    var tinv = @Model?.myInvestment;
+    var rbon = @Model?.myBonus;
+    var tcROI = @Model?.TotalROI;
+    var tws = @Model?.TotalWithdrawal;
+    debugger;
+	
+        var tInvestment = tinv.toLocaleString('en-US');
+        document.getElementById("myInvestment").innerHTML = tInvestment + "<span> USDT</span>"; 
+		
+        var tBonus = rbon.toLocaleString('en-US');
+        document.getElementById("myBonus").innerHTML = tBonus + "<span> USDT</span>"; 
+		
+        var tROI = tcROI.toLocaleString('en-US');
+        document.getElementById("TotalROI").innerHTML = tROI + "<span> USDT</span>"; 
+
+        var tWithdrawal = tws.toLocaleString('en-US');
+        document.getElementById("TotalWithdrawal").innerHTML = tWithdrawal + "<span> USDT</span>"; 
+
+    if (rbon >= 500) {
+        var twb = (tinv + rbon + tcROI - tws).toLocaleString('en-US');
+        document.getElementById("TWithdrawableBal").innerHTML = twb + "<span> USDT</span>";   
+
+    } else {
+        var twb = tinv + tcROI - tws;
+        document.getElementById("TWithdrawableBal").innerHTML = twb + "<span> USDT</span>";
+    }
+})();
+</script>

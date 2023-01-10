@@ -1,0 +1,100 @@
+﻿@model TmeritFX.ViewModel.GeneralViewModel
+@{
+    ViewData["Title"] = "History";
+    Layout = "~/Views/Shared/_InvestorsLayout.cshtml";
+}
+
+<style>
+
+    body {
+        counter-reset: Serial; /* / Set the Serial counter to 0 /*/
+    }
+
+    tr td:first-child:before  {
+        counter-increment: Serial; /* / Increment the Serial counter /*/
+        content: counter(Serial); /*  / Display the counter /*/
+    }
+</style>
+<!-- Page Header -->
+<div class="page-header">
+	<div class="row">
+		<div class="col-sm-12">
+			<h3 class="page-title">Investment History</h3>
+		</div>
+	</div>
+</div>
+<!-- /Page Header -->
+
+<!-- Search Filter -->
+<div class="row">
+	<div class="col-md-12">
+		@if (@Model.History.Count() > 0)
+		{
+			<div class="table-responsive">
+				<table class="table table-striped custom-table mb-0 datatable">
+					<thead>
+						<tr>
+							<th>S/N</th>
+							<th>Plan Purchased</th>
+							<th>Amount</th>
+							<th>ROI</th>
+							<th>Status</th>
+							<th>Date Purchasd</th>
+							<th>Due Date</th>										
+						</tr>
+					</thead>
+					@foreach(var payment in Model.History)
+					{
+						<tbody>
+							<tr>
+								<td></td>
+								<td>@payment.Plan</td>
+								<td>@payment.Amount</td>
+								<td>@payment.Returns</td>
+								<td>@payment.Status</td>
+								<td>@payment.Date</td>
+								<td>@payment.DueDate</td>
+							</tr>
+						</tbody>
+					}
+				</table>
+			</div>
+		}
+		else
+		{
+			<div cclass="row p5 m-5">
+				<div class="col-md-12 text-center p-5 m5">
+					<h2>No Record Found</h2>
+					<a type="button" class="btn btn-info p-2 m-3" asp-action="Plans" asp-controller="Investor"> Invest Now </a>
+				</div>
+			</div>
+		}
+	</div>
+</div>
+
+<!-- Cash Out Modal -->
+<div class="modal custom-modal fade" id="cashout_modal" role="dialog">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="form-header">
+					<h3>Accept</h3>
+					<input hidden id="approvedId">
+					<p>Are you sure want to Cash Out?</p>
+				</div>
+				<div class="modal-btn">
+					<div class="row">
+						<div class="col-6">
+							<a class="btn btn-success continue-btn" onclick="CashOutInvestment()">YES</a>
+						</div>
+						<div class="col-6">
+							<a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">NO</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Cash Out Modal -->
+<!-- /Content End -->

@@ -1,0 +1,82 @@
+﻿@using TmeritFX.Enum
+@model IEnumerable<TmeritFX.Models.Investment>
+@{
+    ViewData["Title"] = "investments";
+    //Layout = ViewBag.Layout;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+
+    body {
+        counter-reset: Serial; /* / Set the Serial counter to 0 /*/
+    }
+
+    tr td:first-child:before  {
+        counter-increment: Serial; /* / Increment the Serial counter /*/
+        content: counter(Serial); /*  / Display the counter /*/
+    }
+</style>
+
+<!-- Page Header -->
+<div class="page-header">
+	<div class="row">
+		<div class="col-sm-12">
+			<h3 class="page-title">investments List</h3>
+		</div>
+	</div>
+</div>
+<!-- /Page Header -->
+					
+
+<div class="row">
+	<div class="col-md-12">
+		@if (@Model.Count() > 0)
+		{
+			<div class="table-responsive">
+				<table class="table table-striped custom-table mb-0 datatable">
+					<thead>
+						<tr>
+							<th>S/N</th>
+							<th>User</th>
+							<th>Plan</th>
+							<th>HashID</th>
+							<th>Amount</th>
+							<th>Status</th>
+							<th>Date</th>
+							<th class="text-center">Actions</th>
+											
+						</tr>
+					</thead>
+					@foreach(var investment in Model)
+					{
+						<tbody>
+							<tr>
+								<td></td>
+								<td>@investment.UserId</td>
+								<td>@investment.Plan</td>
+								<td>@investment.HashID</td>
+								<td>@investment.Amount</td>   								
+							    <td>@investment.Status</td>
+							    <td>@investment.Date</td>
+								@if (@investment.Status == InvestmentStatus.Pending)
+								{
+									<td><i class="fa fa-toggle-off" style="font-size:35px;color:red" onclick="InvestmentPost('ACTIVATE', '@investment.Id')"></i></td>
+								}
+						</tbody>
+					}
+				</table>
+			</div>
+		}
+		else
+		{
+			<div cclass="row p5 m-5">
+				<div class="col-md-12 text-center p-5 m5">
+					<h2>No Record Found</h2>
+				</div>
+			</div>
+		}
+	</div>
+</div>
+<!-- /Content End -->
+

@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+    var refID = ViewBag.RefID;
+}
+
+
+<!-- Content Wrapper -->
+<div class="register-wrapper">
+    <div class="container-center lg" style="margin-top: 2px;">
+        <div class="panel panel-bd">
+            <div class="panel-heading">
+                <div class="view-header">
+                    <div class="header-icon">
+                        <i class="pe-7s-pen"></i>
+                    </div>
+                    <div class="header-title">
+                        <h3>Register</h3><br>
+                        <small><strong>Please enter your data to register.</strong></small>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div class="">
+                    <strong>Already have an account?</strong>
+                    <a asp-action="Login" asp-controller="Accounts">Login</a><hr>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Name</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="name" type="text" class="form-control" required autofocus placeholder="Enter Your Name">
+                    </div>
+                    <p class="text-danger" id="nameValidation" style="display: none;">Enter your name</p>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Email</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input id="email" type="email" class="form-control" required placeholder="Enter Your Email Address">
+                    </div>
+                    <p class="text-danger" id="emailValidation" style="display: none;">Enter your email</p>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Password</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                        <input id="password" type="password" class="form-control" required placeholder="Password">
+                    </div>
+                    <p class="text-danger" id="passwordValidation" style="display: none;">Enter password</p>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Repeat Password</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                        <input id="password_confirm" type="password" class="form-control" required placeholder="Re-type Password">
+                    </div>
+                    <p class="text-danger" id="confirm_passwordValidation" style="display: none;">Password Not Matched</p>
+                </div>
+                <div>
+                    <div class="checkbox checkbox-success">
+                        <input id="checkbox3" type="checkbox" name="pvp" value="Yes" required>
+                        <label for="checkbox3"> I’ve read and understood the <a href="../privacypolicy.php.html" target="_blank">Privacy&nbsp;Policy</a></label><br>
+                        <p class="text-danger" id="checkbox3Validation" style="display: none;">Read and Accept Policy</p>
+                        <br>
+                        <input id="checkbox2" type="checkbox" name="tos" class="" required>
+                        <label for="checkbox2">I have read and agreed to VolksFx's <a href="../tandc.php.html" target="_blank">Terms of Service</a></label><br>
+                        <p class="text-danger" id="checkbox2Validation" style="display: none;">Read and Accept Terms</p>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary pull-right" style="width: 100%;" onclick="AccountsRegistraion('@refID')">Register</button>
+                </div>
+
+            </div>
+        </div>
+        <div style="font-weight: bold;" align="center">
+            <a asp-action="Index" asp-controller="Home"><i class="fa fa-arrow-circle-left"></i> Back to Home</a><br><br>
+        </div>
+        <div class="text-center">
+            &copy; 2022 VolksFx Investment.<br>All Rights Reserved.
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="regsuc" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h1 class="modal-title"><i class="fa fa-file-o"></i> TERMS OF SERVICE</h1>
+            </div>
+            <div class="modal-body">
+                <h4 style="font-size:23px;font-weight:bold;text-transform:uppercase;">Risk Notice</h4>
+                <p align="justify" style="color:#00c0ef;">Bitcoin is a not backed or value guaranteed by any financial institution; when purchasing or investing  bitcoins the customer assumes all risk the bitcoins may become worthless in value.  Customers should research and consider the risks before purchasing or investing  any bitcoins.  The company makes absolutely no guarantee about the future value of the bitcoins purchased.</p><br>
+                <h4 style="font-size:23px;font-weight:bold;text-transform:uppercase;">Severability</h4>
+                <p align="justify" style="color:#00c0ef;">In the event any court shall declare any section or sections of this Agreement invalid or void, such declaration shall not invalidate the entire Agreement and all other paragraphs of the Agreement shall remain in full force and effect.</p><br>
+                <h4 style="font-size:23px;font-weight:bold;text-transform:uppercase;">Customer input errors</h4>
+                <p align="justify" style="color:#00c0ef;">It is the sole responsibility of the customer to check the accuracy of information entered and saved on the website.   Account details displayed on the order summary webpage will be the final transfer destination.  In the case that this information is incorrect, and funds are transferred to an unintended destination, the company shall not reimburse the customer and shall not transfer additional funds.  As such customers must ensure the Bitcoin address and bank information they enter is completely correct.</p><br>
+                <h4 style="font-size:23px;font-weight:bold;text-transform:uppercase;">Binding Agreement</h4>
+                <p align="justify" style="color:#00c0ef;">The terms and provisions of this Agreement are binding upon Your heirs, successors, assigns, and other representatives. This Agreement may be executed in counterparts, each of which shall be considered to be an original, but both of which constitute the same Agreement.</p><br>
+                <h4 style="font-size:23px;font-weight:bold;text-transform:uppercase;">Expired orders</h4>
+                <p align="justify" style="color:#00c0ef;">If the company receives payment for an order that has already expired, the company reserves the right to recalculate the Bitcoin to Thai Baht exchange rate at the time of processing the transfer to the customer.  This may result in the customer receiving less bitcoins or Thai Baht than the original ordered amount.</p><br>
+                <h4 style="font-size:23px;font-weight:bold;text-transform:uppercase;">Security</h4>
+                <p align="justify" style="color:#00c0ef;">We have implemented security measures designed to secure your information from accidental loss and from unauthorized access, use, alteration or disclosure. However, we cannot guarantee that unauthorized persons will never gain access to your information, and you acknowledge that you provide your information at your own risk, except as otherwise provided by applicable law.</p><br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--modal close-->
+<!-- /.content-wrapper -->
+<!-- Scripts -->
+
+<script>
+    (function () {
+        function onTidioChatApiReady() {
+            window.tidioChatApi.hide();
+        }
+
+        if (window.tidioChatApi) {
+            window.tidioChatApi.on("ready", onTidioChatApiReady);
+        }
+
+        document.querySelector(".chat-button").addEventListener("click", function () {
+            window.tidioChatApi.show();
+            window.tidioChatApi.open();
+        });
+    });
+ </script>

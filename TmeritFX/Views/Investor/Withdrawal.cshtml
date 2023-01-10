@@ -1,0 +1,208 @@
+﻿@model TmeritFX.ViewModel.GeneralViewModel
+@{
+    ViewData["Title"] = "Withdrawal";
+    Layout = "~/Views/Shared/_InvestorsLayout.cshtml";
+}
+
+<style>
+    body {
+        counter-reset: Serial; /* / Set the Serial counter to 0 /*/
+    }
+
+    tr td:first-child:before  {
+        counter-increment: Serial; /* / Increment the Serial counter /*/
+        content: counter(Serial); /*  / Display the counter /*/
+    }
+</style>
+
+
+<!-- Page Header -->
+<div class="page-header" onload="WalletBalance()">
+						
+	<div class="row">
+		<div class="col">
+			<h3 class="page-title">Investment Withdrawal</h3>
+		</div>
+		<div class="col-auto float-right ml-auto">
+			<a class="btn btn-dashboard add-btn" href="#" data-toggle="modal" data-target="#place_withdrawal">Place Withdrawal</a>
+		</div>
+	</div>  
+</div>
+<!-- /Page Header -->
+
+<div class="row">
+	<div class="col-md-12 mb-2 mt-2">
+		<div class="card-group m-b-30">
+			<div class="card mr-1 box-style rounded-lg">
+				<div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <div><h4 id="myInvestment"></h4></div>
+                        <i class="fa fa-money text-muted" style="font-size:40px;"></i>
+                    </div>
+                    <div><h4>Total Completed Deposit</h4></div>
+				</div>
+			</div>			
+			<div class="card mr-1 box-style rounded-lg">
+				<div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <div><h4 id="TotalROI"></h4></div>
+                        <i class="fa fa-money text-muted" style="font-size:40px;"></i>
+                    </div>
+                    <div><h4>Total ROI</h4></div>
+				</div>
+			</div>
+			<div class="card mr-1 box-style rounded-lg">
+				<div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <div><h4 id="myBonus"></h4></div>
+                        <i class="la la-money text-muted" style="font-size:50px;"></i>
+                    </div>
+                    <div><h4>Total Referral Bonus Earned</h4></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12 mb-2">
+		<div class="card-group m-b-30">
+			<div class="card mr-1 box-style rounded-lg">
+				<div class="card-body">
+                    <div class="d-flex justify-content-between mb-2">
+                        <div><h4 id="TotalWithdrawal"></h4></div>
+                        <i class="la la-money text-muted" style="font-size:50px;"></i>
+                    </div>
+                    <div><h4>Total Completed Withdrawal</h4></div>
+				</div>
+			</div>
+							
+			<div class="card ml-1 box-style rounded-lg">
+				<div class="card-body">
+                     <div class="d-flex justify-content-between mb-2">
+                        <div><h4 id="TWithdrawableBal"></h4></div>
+                        <i class="la la-money text-muted" style="font-size:50px;"></i>
+                     </div>
+                     <div><h4>Withdrawable Balance</h4></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Table-->
+
+<div class="row">
+	<div class="col-md-12">
+		@if (@Model.Withdrawals.Count() > 0)
+		{
+			<div class="table-responsive">
+				<table class="table table-striped custom-table mb-0 datatable">
+					<thead>
+						<tr>
+							<th>S/N</th>
+							<th>Amount(USDT)</th>
+							<th>Wallet Address</th>
+							<th>Date</th>
+							<th>Status</th>									
+						</tr>
+					</thead>
+					@foreach(var withdrawal in Model.Withdrawals)
+					{
+						<tbody>
+							<tr>
+								<td></td>
+								<td>@withdrawal.Amount</td>
+								<td>@withdrawal.Address</td>
+								<td>@withdrawal.Date</td>
+								<td>@withdrawal.Status</td>
+							</tr>
+						</tbody>
+					}
+				</table>
+			</div>
+		}
+		else
+		{
+			<div cclass="row p5 m-5">
+				<div class="col-md-12 text-center p-5 m5">
+					<h2>No Record Found</h2>
+				</div>
+			</div>
+		}
+	</div>
+</div>
+
+
+<!-- Withdrwal form Modal -->
+<div class="modal custom-modal fade" id="place_withdrawal" role="dialog">
+	<div class="modal-dialog modal-md modal-dialog-centered">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+			<div class="modal-body py-1">
+				<h5 class="modal-title text-center mb-3">Withdrawal Form</h5>
+				<div class="row">
+					<div class="col-md-12 mt-1">
+						<div class="card">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-md-12 mb-2">											
+										<div class="form-group my-0">
+											<label>Amount in USDT</label>
+											<input type="number" id="amount" autofocus class="form-control" placeholder="Enter investment amount" required>
+											<p class="text-danger" id="amountVDT" style="display: none;">Enter a valid amount</p>
+										</div>
+									</div>
+								</div>
+								<div class="form-group mt-3">
+									<label>Your Address:</label>
+									<input type="text" id="address" class="form-control" required placeholder="Enter USDT or BTC address" />
+									<p class="text-danger" id="addressVDT" style="display: none;">Paste USDT or BTC address</p>
+								</div>									
+								<div class="m-t-20 text-center mt-0">
+									<button class="btn btn-primary submit-btn" onclick="PlaceWithdrawal()">Submit</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Withdrwal form Modal -->
+<input type="number" id="chk" hidden/>
+<script>
+(function() {
+    debugger;
+    var tci = @Model?.myInvestment;
+    var tcROI = @Model?.TotalROI;
+    var tbe = @Model?.myBonus;
+    var tws = @Model?.TotalWithdrawal;
+    var tpws = @Model?.TotalPendingWithdrawal;
+    debugger;
+		
+        var tInvestment = tci.toLocaleString('en-US');
+        document.getElementById("myInvestment").innerHTML = tInvestment + "<span> USDT</span>";		
+        
+		var tRIO = tcROI.toLocaleString('en-US');
+        document.getElementById("TotalROI").innerHTML = tRIO + "<span> USDT</span>";		
+        
+		var tBonus = tbe.toLocaleString('en-US');
+        document.getElementById("myBonus").innerHTML = tBonus + "<span> USDT</span>";
+		
+        var tWithdrawal = tws.toLocaleString('en-US');
+        document.getElementById("TotalWithdrawal").innerHTML = tWithdrawal + "<span> USDT</span>";
+
+    if (tbe >= 500) {
+        var twb = tci + tcROI + tbe - tws - tpws;
+        document.getElementById("TWithdrawableBal").innerHTML = twb + "<span> USDT</span>";   
+        document.getElementById("chk").value = twb;
+
+    } else {
+        var twb = tci + tcROI - tws - tpws;
+        document.getElementById("TWithdrawableBal").innerHTML = twb + "<span> USDT</span>";
+    }
+})();
+</script>
+			
